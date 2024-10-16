@@ -48,8 +48,9 @@ Asi para cada contenedor con el que queremos trabajar. <br>
 Para utilizar sqoop en el datanode debemos ejecutar lo siguiente
 ```     >_ sh /datanode/scripts/script.sh     ``` <br> 
 
-Para exportar las tabla de la base de datos retail con sqoop ejecutar lo siguiente:
-```     >_ sh /datanode/scripts/sqoop/script_sqoop_textfile.sh     ```
+Para exportar las tabla de la base de datos retail con sqoop ejecutar lo siguiente:<br>
+```     >_ sh /datanode/scripts/sqoop/script_sqoop_textfile.sh     ```<br>
+```     >_ sh /datanode/scripts/sqoop/script_sqoop_avro.sh     ```
 
 ## Hive
 Para poder trabajar con hive ingresamos al contenedor del hive-server. <br>
