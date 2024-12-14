@@ -51,6 +51,8 @@ Para utilizar sqoop en el datanode debemos ejecutar lo siguiente
 Para exportar las tabla de la base de datos retail con sqoop ejecutar lo siguiente:<br>
 ```     >_ sh /datanode/scripts/sqoop/script_sqoop_textfile.sh     ```<br>
 ```     >_ sh /datanode/scripts/sqoop/script_sqoop_avro.sh     ```
+```     >_ hdfs dfs -put *.avsc /user/datapath/datasets/avro/     ```
+
 
 ## Hive
 Para poder trabajar con hive ingresamos al contenedor del hive-server. <br>
