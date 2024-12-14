@@ -114,6 +114,9 @@ CREATE TABLE persons (
 --
 INSERT INTO persons VALUES
    (1,"Vivian","Hamilton","1971-07-08","green",1);
+
+INSERT INTO persons VALUES
+   (2,"Vivian","Hamilton","1971-07-08","red",1);
     
 SELECT * FROM persons;
 
@@ -137,7 +140,7 @@ CREATE TABLE IF NOT EXISTS persons1 LIKE persons;
 
 INSERT OVERWRITE TABLE persons1
 SELECT * FROM persons
-WHERE color='green';
+WHERE color='red';
 
 SELECT * FROM persons1;
 
@@ -164,6 +167,19 @@ CREATE TABLE persons3 (
     color VARCHAR(9)
 )
 PARTITIONED BY (quantity INT);
+
+
+CREATE TABLE ventas (
+    id INT,
+    producto STRING,
+    cantidad INT
+)
+PARTITIONED BY (anio INT, mes INT)
+STORED AS PARQUET;
+
+LOAD DATA INPATH '/ruta/a/ventas_2023_01' INTO TABLE ventas PARTITION (anio=2023, mes=1);
+LOAD DATA INPATH '/ruta/a/ventas' INTO TABLE ventas PARTITION (anio, mes);
+
 
 INSERT INTO TABLE persons3 PARTITION (quantity = 1) VALUES
    (1,"Vivian","Hamilton","1971-07-08","green");
